@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "tsc --noEmit && vite build --mode pages && gh-pages -d dist --nojekyll"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "typescript": "^5.6.3",
     "vite": "^5.4.11"
   }

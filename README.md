@@ -25,4 +25,10 @@ Para usar música localmente, coloque o arquivo em `public/musica.mp3`
 
 ## Publicar uma atualização
 
-Qualquer `git push` na branch `main` recompila e publica automaticamente pelo GitHub Actions.
+```bash
+npm run deploy
+```
+
+Compila a versão sem música e envia a pasta `dist` para a branch `gh-pages`,
+de onde o GitHub Pages serve o site (leva ~1 minuto para aparecer).
+Para guardar o código-fonte: `git add -A && git commit -m "..." && git push`.
