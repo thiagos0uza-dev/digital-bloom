@@ -1,0 +1,5 @@
+node_modules
+dist
+*.log
+# Música protegida por direitos autorais: fica só local, nunca vai para o repositório
+public/*.mp3

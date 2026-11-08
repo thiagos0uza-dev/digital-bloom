@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#05060f" />
+    <title>Um presente pra você 💜</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💜</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Quicksand:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="/digital-bloom/assets/index-y8p7xg1f.js"></script>
+    <link rel="stylesheet" crossorigin href="/digital-bloom/assets/index-BswbssK2.css">
+  </head>
+  <body>
+    <canvas id="sky" aria-hidden="true"></canvas>
+
+    <!-- TELA 1: relatório do dia -->
+    <main id="report" class="screen">
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+          <!-- raminho botânico desenhado à mão: caule, folhas e uma florzinha -->
+          <symbol id="sprig" viewBox="0 0 220 220">
+            <path d="M18 210 C 60 160, 90 120, 150 40" fill="none" stroke="var(--ink-green)" stroke-width="1.6" stroke-linecap="round"/>
+            <g fill="var(--ink-green)" opacity=".85">
+              <path d="M52 168 c -22 -4 -34 -20 -36 -34 c 16 2 32 14 36 34z"/>
+              <path d="M58 160 c 18 -12 36 -10 46 0 c -14 10 -32 12 -46 0z"/>
+              <path d="M86 122 c -20 -8 -28 -26 -26 -40 c 14 6 26 22 26 40z"/>
+              <path d="M94 114 c 16 -14 34 -16 46 -8 c -12 12 -30 16 -46 8z"/>
+              <path d="M118 80 c -14 -10 -18 -26 -14 -38 c 12 8 18 22 14 38z"/>
+            </g>
+            <path d="M70 150 C 90 140, 104 150, 120 160" fill="none" stroke="var(--gold)" stroke-width=".9" opacity=".7"/>
+            <g transform="translate(152 38)">
+              <g fill="var(--rose)" opacity=".9">
+                <ellipse rx="7" ry="12" transform="rotate(0) translate(0 -11)"/>
+                <ellipse rx="7" ry="12" transform="rotate(72) translate(0 -11)"/>
+                <ellipse rx="7" ry="12" transform="rotate(144) translate(0 -11)"/>
+                <ellipse rx="7" ry="12" transform="rotate(216) translate(0 -11)"/>
+                <ellipse rx="7" ry="12" transform="rotate(288) translate(0 -11)"/>
+              </g>
+              <circle r="4.5" fill="var(--gold)"/>
+            </g>
+            <g transform="translate(132 58)" fill="var(--rose)" opacity=".6">
+              <circle r="3"/><circle cx="9" cy="6" r="2.2"/><circle cx="-4" cy="10" r="1.8"/>
+            </g>
+          </symbol>
+        </defs>
+      </svg>
+
+      <div class="stage">
+        <div class="env env-back" aria-hidden="true"></div>
+        <div class="env env-front" aria-hidden="true"><div class="pocket"></div></div>
+        <div class="env env-top" aria-hidden="true"><div class="env-flap"><span class="wax"></span></div></div>
+
+        <article class="letter" aria-live="polite">
+          <div class="frame" aria-hidden="true"></div>
+          <svg class="sprig sprig-tl" aria-hidden="true"><use href="#sprig"/></svg>
+          <svg class="sprig sprig-br" aria-hidden="true"><use href="#sprig"/></svg>
+          <h1 class="greet reveal"></h1>
+          <p class="title reveal"></p>
+          <ul class="lines"></ul>
+          <div class="seal reveal" aria-hidden="true">
+            <svg viewBox="0 0 120 18"><path d="M4 9 H46 M74 9 H116" stroke="var(--gold)" stroke-width=".8" opacity=".6"/><path d="M60 9 c -6 -6 -12 -6 -16 0 c 4 6 10 6 16 0z M60 9 c 6 -6 12 -6 16 0 c -4 6 -10 6 -16 0z" fill="var(--ink-green)" opacity=".8"/><circle cx="60" cy="9" r="2.6" fill="var(--rose)"/></svg>
+          </div>
+          <button id="open" class="btn reveal" type="button"></button>
+        </article>
+      </div>
+    </main>
+
+    <!-- TRANSIÇÃO: processando carinho -->
+    <div id="loading" class="screen hidden" aria-live="polite">
+      <p class="loading-text"></p>
+      <div class="bitbar" aria-hidden="true"></div>
+      <p class="pct">0%</p>
+    </div>
+
+    <!-- MENSAGEM FINAL -->
+    <p id="final" class="final hidden"></p>
+
+    <!-- CONTROLES DISCRETOS -->
+    <nav id="controls" class="controls hidden" aria-label="Controles">
+      <button id="play" type="button" aria-label="Pausar">❚❚</button>
+      <input id="vol" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume" />
+      <button id="restart" type="button" aria-label="Reiniciar">↻</button>
+    </nav>
+
+  </body>
+</html>
